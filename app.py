@@ -1,4 +1,9 @@
 import streamlit as st
+import sqlite3   # if you already have this, keep it
+import json      # if you already have this, keep it
+
+st.title("Skill Exchange App")
+st.caption("Created by Mohamed Rashik")
 
 # ─── Page Config ───────────────────────────────────────────────────────────────
 st.set_page_config(page_title="SkillBridge", page_icon="⟁", layout="wide")
@@ -113,8 +118,8 @@ hr { border-color: #e8e3d9; }
 # ─── Session State Init ─────────────────────────────────────────────────────────
 if "students" not in st.session_state:
     st.session_state.students = [
-        {"name": "Arjun Mehta",   "avatar": "AM", "dept": "Computer Science", "year": "3rd Year",
-         "offering": ["Python Programming", "Machine Learning"], "seeking": ["UI/UX Design", "French"],
+        {"name": "Mohamed Rashik",   "avatar": "MR", "dept": "Mechanical Engineering", "year": "1st Year",
+         "offering": ["writing"], "seeking": ["python"],
          "bio": "Passionate about AI and open-source.", "rating": 4.8, "sessions": 12, "category": "Technology"},
         {"name": "Sara Chen",     "avatar": "SC", "dept": "Design Studies",   "year": "2nd Year",
          "offering": ["UI/UX Design", "Figma"], "seeking": ["Python", "Statistics"],
@@ -141,7 +146,7 @@ if "students" not in st.session_state:
 
 if "my_profile" not in st.session_state:
     st.session_state.my_profile = {
-        "name": "Alex Johnson", "avatar": "AJ", "dept": "Computer Science", "year": "3rd Year",
+        "name": "Your Name", "avatar": "YN", "dept": "Mechanical Engineering", "year": "1st Year",
         "offering": ["Python", "Machine Learning"], "seeking": ["UI/UX Design", "French"],
         "bio": "Passionate about AI and building things. Always looking to learn something new.",
         "rating": 4.8, "sessions": 7, "category": "Technology"
